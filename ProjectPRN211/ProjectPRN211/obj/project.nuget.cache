@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AoAnY5b+ciNpnE8YtCOQmPO7OfX72iyEHZFnohn92pnFId7pBYmcSLGasayDzp8GXZvZDo2Qr5uUdmTsTaxUbg==",
+  "dgSpecHash": "NSd6Ljlay4yZ9N1tNNSts8+EO7mI3yACL1KKnbaQWSQj2Nv6sQpddInpnBZs11c62OcQjqnz53GhrsNB6JVpTQ==",
   "success": true,
-  "projectFilePath": "E:\\Class_Folder\\PRN211\\Project\\ProjectPRN211\\ProjectPRN211\\ProjectPRN211.csproj",
+  "projectFilePath": "E:\\Class_Folder\\PRN211\\Project\\prn211\\ProjectPRN211\\ProjectPRN211\\ProjectPRN211.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\quang\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\quang\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

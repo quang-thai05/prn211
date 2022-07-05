@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Registration </title>
+    <link rel="stylesheet" href="~/css/register.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Registration</h2>
+        <form action="/home/doregister" method="post">
+            <div class="input-box">
+                <input type="text" name="param1" value="@ViewBag.username" placeholder="Enter your name" required>
+            </div>
+            <div class="input-box">
+                <input type="text" name="param2" value="@ViewBag.email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-box">
+                <input type="password" name="param3" value="@ViewBag.pass" placeholder="Create password" required>
+            </div>
+            <div class="input-box">
+                <input type="password" name="param4" value="@ViewBag.repass" placeholder="Confirm password" required>
+            </div>
+            <span style="color: red;">@ViewBag.Error</span>
+            <div class="policy">
+                <input type="checkbox" required>
+                <h3>I accept all terms & condition</h3>
+            </div>
+            <div class="input-box button">
+                <input type="submit" value="Register Now">
+            </div>
+            <div class="text">
+                <h3>Already have an account? <a href="/home/login">Login now</a></h3>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Class_Folder\\PRN211\\Project\\ProjectPRN211\\ProjectPRN211\\ProjectPRN211.csproj": {}
+    "E:\\Class_Folder\\PRN211\\Project\\prn211\\ProjectPRN211\\ProjectPRN211\\ProjectPRN211.csproj": {}
   },
   "projects": {
-    "E:\\Class_Folder\\PRN211\\Project\\ProjectPRN211\\ProjectPRN211\\ProjectPRN211.csproj": {
+    "E:\\Class_Folder\\PRN211\\Project\\prn211\\ProjectPRN211\\ProjectPRN211\\ProjectPRN211.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Class_Folder\\PRN211\\Project\\ProjectPRN211\\ProjectPRN211\\ProjectPRN211.csproj",
+        "projectUniqueName": "E:\\Class_Folder\\PRN211\\Project\\prn211\\ProjectPRN211\\ProjectPRN211\\ProjectPRN211.csproj",
         "projectName": "ProjectPRN211",
-        "projectPath": "E:\\Class_Folder\\PRN211\\Project\\ProjectPRN211\\ProjectPRN211\\ProjectPRN211.csproj",
+        "projectPath": "E:\\Class_Folder\\PRN211\\Project\\prn211\\ProjectPRN211\\ProjectPRN211\\ProjectPRN211.csproj",
         "packagesPath": "C:\\Users\\quang\\.nuget\\packages\\",
-        "outputPath": "E:\\Class_Folder\\PRN211\\Project\\ProjectPRN211\\ProjectPRN211\\obj\\",
+        "outputPath": "E:\\Class_Folder\\PRN211\\Project\\prn211\\ProjectPRN211\\ProjectPRN211\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\quang\\AppData\\Roaming\\NuGet\\NuGet.Config",
