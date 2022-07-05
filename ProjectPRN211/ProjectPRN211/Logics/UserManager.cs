@@ -1,4 +1,5 @@
 ﻿using ProjectPRN211.Models;
+using System;
 using System.Linq;
 
 namespace ProjectPRN211.Logics
@@ -30,9 +31,15 @@ namespace ProjectPRN211.Logics
 
         public void Insert(User user)
         {
-            User u = new User();
-            u.UserName = user.UserName;
-            
+            context.Add(user);
+            context.SaveChanges();
+        }
+
+        public string GenerateOTP()
+        {
+            Random random = new Random();
+            string otp = random.Next(100000, 999999).ToString();
+            return otp;
         }
     }
 }

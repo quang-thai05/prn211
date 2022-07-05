@@ -108,7 +108,7 @@ namespace ProjectPRN211.Controllers
             }
             else
             {
-                if (!param2.Equals(param3))
+                if (!param3.Equals(param4))
                 {
                     ViewBag.error = "Confirm password fail, please enter again!";
                     ViewBag.username = param1;
@@ -123,8 +123,16 @@ namespace ProjectPRN211.Controllers
                     u2.UserName = param1;
                     u2.Email = param2;
                     u2.Password = param3;
+                    u2.Active = false;
+                    u2.Otp = userManager.GenerateOTP();
+                    u2.RoleId = 3;
+                    u2.HospitalId = 1;
+                    SendMail sendMail = new SendMail();
+                    sendMail.SendingEmail(param2, "Nghe An health service department", "Your OTP is: " + u2.Otp);
                     userManager.Insert(u2);
                 }
+                ViewBag.email = param2;
+                return View("/Views/Home/Active.cshtml");
             }
         }
     }
