@@ -41,5 +41,12 @@ namespace ProjectPRN211.Logics
             string otp = random.Next(100000, 999999).ToString();
             return otp;
         }
+
+        public void ChangePassword(string pass, int id)
+        {
+            User u = context.Users.FirstOrDefault(x => x.UserId == id);
+            u.Password = pass;
+            context.SaveChanges();
+        }
     }
 }

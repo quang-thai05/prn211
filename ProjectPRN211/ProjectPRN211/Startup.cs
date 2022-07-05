@@ -42,8 +42,12 @@ namespace ProjectPRN211
                     pattern: "{controller}/{action}/{param1}/{param2}"
                     );
                 endpoints.MapControllerRoute(
-                    name: "p1",
+                    name: "p2",
                     pattern: "{controller}/{action}/{param1}/{param2}/{param3}/{param4}"
+                    );
+                endpoints.MapControllerRoute(
+                    name: "p3",
+                    pattern: "{controller}/{action}/{param1}/{param2}/{param3}"
                     );
             });
         }

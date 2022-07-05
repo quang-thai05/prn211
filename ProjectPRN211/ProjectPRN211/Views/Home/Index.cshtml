@@ -81,14 +81,14 @@
                             @if (Context.Session.GetString("user") != null)
                             {
                                 <li><a data-scroll>Welcome @(JsonConvert.DeserializeObject<User>(Context.Session.GetString("user")).UserName)</a></li>
-                                <li><a data-scroll href="/home/profile">Profile</a></li>
-                                <li><a data-scroll href="/home/dologout">Logout</a></li>
+                                <li><a data-scroll href="/profile/profile">Profile</a></li>
+                                <li><a data-scroll href="/auth/dologout">Logout</a></li>
                             }
                             @if (Context.Session.GetString("user") is null)
                             {
-                                <li><a data-scroll href="/home/login">Login</a></li>
+                                <li><a data-scroll href="/auth/login">Login</a></li>
                             }
-                            
+
                         </ul>
                     </div>
                 </nav>
@@ -201,55 +201,61 @@
             </div>
             <!-- end row -->
             <hr class="hr1">
-            <c:if test="${sessionScope.userdetail.role_id == 1}">
-                <div class="row">
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="service-widget">
-                            <div class="post-media wow fadeIn">
-                                <a href="~/images/clinic_03.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                                <img src="~/images/clinic_03.jpg" alt="" class="img-responsive">
+            @if (Context.Session.GetString("user") != null)
+            {
+                @if (JsonConvert.DeserializeObject<User>(Context.Session.GetString("user")).RoleId == 1)
+                {
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="service-widget">
+                                <div class="post-media wow fadeIn">
+                                    <a href="~/images/clinic_03.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                                    <img src="~/images/clinic_03.jpg" alt="" class="img-responsive">
+                                </div>
+                                <h3><a href="create-document" style="color: white">Create document</a></h3>
                             </div>
-                            <h3><a href="create-document" style="color: white">Create document</a></h3>
+                            <!-- end service -->
                         </div>
-                        <!-- end service -->
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="service-widget">
-                            <div class="post-media wow fadeIn">
-                                <a href="~/images/clinic_03.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                                <img src="~/images/clinic_03.jpg" alt="" class="img-responsive">
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="service-widget">
+                                <div class="post-media wow fadeIn">
+                                    <a href="~/images/clinic_03.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                                    <img src="~/images/clinic_03.jpg" alt="" class="img-responsive">
+                                </div>
+                                <h3><a href="list-document" style="color: white">List documents</a></h3>
                             </div>
-                            <h3><a href="list-document" style="color: white">List documents</a></h3>
+                            <!-- end service -->
                         </div>
-                        <!-- end service -->
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="service-widget">
-                            <div class="post-media wow fadeIn">
-                                <a href="~/images/clinic_01.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                                <img src="~/images/clinic_01.jpg" alt="" class="img-responsive">
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="service-widget">
+                                <div class="post-media wow fadeIn">
+                                    <a href="~/images/clinic_01.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                                    <img src="~/images/clinic_01.jpg" alt="" class="img-responsive">
+                                </div>
+                                <h3><a href="admindoc" style="color: white">Documents Control Center</a></h3>
                             </div>
-                            <h3><a href="admindoc" style="color: white">Documents Control Center</a></h3>
+                            <!-- end service -->
                         </div>
-                        <!-- end service -->
                     </div>
-                </div>
-            </c:if>
+                }
 
-            <c:if test="${sessionScope.userdetail.role_id == 2}">
-                <div class="row">
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="service-widget">
-                            <div class="post-media wow fadeIn">
-                                <a href="~/images/clinic_03.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                                <img src="~/images/clinic_03.jpg" alt="" class="img-responsive">
+                @if (JsonConvert.DeserializeObject<User>(Context.Session.GetString("user")).RoleId == 2)
+                {
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="service-widget">
+                                <div class="post-media wow fadeIn">
+                                    <a href="~/images/clinic_03.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                                    <img src="~/images/clinic_03.jpg" alt="" class="img-responsive">
+                                </div>
+                                <h3><a href="doc-doclist" style="color: white">Read document</a></h3>
                             </div>
-                            <h3><a href="doc-doclist" style="color: white">Read document</a></h3>
+                            <!-- end service -->
                         </div>
-                        <!-- end service -->
                     </div>
-                </div>
-            </c:if>
+                }
+            }
+
             <!-- end row -->
         </div>
         <!-- end container -->

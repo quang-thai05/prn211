@@ -23,7 +23,7 @@
             <div class="form login">
                 <span class="title">Login</span>
 
-                <form action="/Home/DoLogin" method="post">
+                <form action="/auth/DoLogin" method="post">
                     <div class="input-field">
                         <input type="text" name="param1" value="@ViewBag.email" placeholder="Enter your email" required>
                         <i class="uil uil-envelope icon"></i>
@@ -36,7 +36,7 @@
                     <span style="color: red;">@ViewBag.Error</span>
                     <div class="checkbox-text">
 
-                        <a href="/home/forgotpass" class="text">Forgot password?</a>
+                        <a href="/auth/forgotpass" class="text">Forgot password?</a>
                     </div>
 
                     <div class="input-field button">
@@ -47,7 +47,7 @@
                 <div class="login-signup">
                     <span class="text">
                         Not a member?
-                        <a href="/home/register" class="text signup-link">Signup Now</a>
+                        <a href="/auth/register" class="text signup-link">Signup Now</a>
                     </span>
                 </div>
             </div>

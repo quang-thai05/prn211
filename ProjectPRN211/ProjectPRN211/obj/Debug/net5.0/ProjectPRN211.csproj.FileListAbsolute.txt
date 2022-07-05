@@ -124,13 +124,14 @@ E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5
 E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\ProjectPRN211.TagHelpers.input.cache
 E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\ProjectPRN211.TagHelpers.output.cache
 E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\ProjectPRN211.RazorCoreGenerate.cache
-E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\Razor\Views\Home\Active.cshtml.g.cs
 E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\Razor\Views\Home\Login.cshtml.g.cs
-E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\Razor\Views\Home\Register.cshtml.g.cs
 E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\ProjectPRN211.RazorTargetAssemblyInfo.cache
 E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\ProjectPRN211.RazorTargetAssemblyInfo.cs
 E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\ProjectPRN211.Views.pdb
 E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\ProjectPRN211.csproj.CopyComplete
 E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\ProjectPRN211.genruntimeconfig.cache
 E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\ref\ProjectPRN211.dll
+E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\Razor\Views\Auth\Active.cshtml.g.cs
+E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\Razor\Views\Auth\ChangePassword.cshtml.g.cs
+E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\Razor\Views\Auth\Login.cshtml.g.cs
+E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\Razor\Views\Auth\Register.cshtml.g.cs
