@@ -17,7 +17,7 @@ namespace ProjectPRN211.Controllers
             }
             else
             {
-                return Redirect("/home/index");
+                return Redirect("/");
             }
         }
 
@@ -30,7 +30,7 @@ namespace ProjectPRN211.Controllers
                 if (user.Active)
                 {
                     HttpContext.Session.SetString("user", JsonConvert.SerializeObject(user));
-                    return Redirect("/home/index");
+                    return Redirect("/");
                 }
                 else
                 {
@@ -131,15 +131,16 @@ namespace ProjectPRN211.Controllers
             }
         }
 
-        public IActionResult ChangePassword()
+        public IActionResult ChangePassword(int param1)
         {
+            ViewBag.id = param1;
             return View();
         }
 
-        public IActionResult DoChangePassword(string param1, string param2, string param3, string param4)
+        public IActionResult DoChangePassword(int param1, string param2, string param3, string param4)
         {
             UserManager userManager = new UserManager();
-            User user = userManager.GetUserByEmail(param1);
+            User user = userManager.GetUserById(param1);
 
             if (user != null)
             {
@@ -154,7 +155,7 @@ namespace ProjectPRN211.Controllers
                     else
                     {
                         ViewBag.error = "Confirm password faild! Please check your information!";
-                        ViewBag.email = param1;
+                        ViewBag.id = param1;
                         ViewBag.oldpass = param2;
                         ViewBag.newpass = param3;
                         ViewBag.confirm = param4;
@@ -164,7 +165,7 @@ namespace ProjectPRN211.Controllers
                 else
                 {
                     ViewBag.error = "Current password is wrong!";
-                    ViewBag.email = param1;
+                    ViewBag.id = param1;
                     ViewBag.oldpass = param2;
                     ViewBag.newpass = param3;
                     ViewBag.confirm = param4;
@@ -176,6 +177,11 @@ namespace ProjectPRN211.Controllers
                 ViewBag.error = "Current password is wrong!";
                 return View("/Views/Auth/ChangePassword.cshtml");
             }
+        }
+
+        public IActionResult ForgotPassword()
+        {
+            return View();
         }
     }
 }

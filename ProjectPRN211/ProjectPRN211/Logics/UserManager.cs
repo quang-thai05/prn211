@@ -17,6 +17,11 @@ namespace ProjectPRN211.Logics
             return context.Users.FirstOrDefault(x => x.Email.Equals(email) && x.Password.Equals(password));
         }
 
+        public User GetUserById(int id)
+        {
+            return context.Users.FirstOrDefault(x => x.UserId == id);
+        }
+
         public User GetUserByEmail(string email)
         {
             return context.Users.FirstOrDefault(x => x.Email.Equals(email));
