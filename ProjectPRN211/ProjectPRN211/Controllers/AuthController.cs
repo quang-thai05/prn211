@@ -183,5 +183,25 @@ namespace ProjectPRN211.Controllers
         {
             return View();
         }
+
+        public IActionResult DoForgotPassword(string param1)
+        {
+            UserManager userManager = new UserManager();
+            User u = userManager.GetUserByEmail(param1);
+            SendMail sendMail = new SendMail();
+            if (u != null)
+            {
+                string newPass = userManager.GenerateRandomPass();
+                userManager.ChangePassword(newPass, u.UserId);
+                sendMail.SendingEmail(param1, "Reset Password", "Your new password is: " + newPass);
+                ViewBag.success = "Your password has been reset, check your email to get new password!";
+                return View("/Views/Auth/ForgotPassword.cshtml");
+            }
+            else
+            {
+                ViewBag.error = "User not found!";
+                return View("/Views/Auth/ForgotPassword.cshtml");
+            }
+        }
     }
 }
