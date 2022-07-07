@@ -136,3 +136,4 @@ E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5
 E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\Razor\Views\Auth\Login.cshtml.g.cs
 E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\Razor\Views\Auth\Register.cshtml.g.cs
 E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\Razor\Views\Auth\ForgotPassword.cshtml.g.cs
+E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\Razor\Views\Doc\CreateDoc.cshtml.g.cs
