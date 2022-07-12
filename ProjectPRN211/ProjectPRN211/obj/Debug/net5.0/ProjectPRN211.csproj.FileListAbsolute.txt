@@ -137,3 +137,11 @@ E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5
 E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\Razor\Views\Auth\Register.cshtml.g.cs
 E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\Razor\Views\Auth\ForgotPassword.cshtml.g.cs
 E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\Razor\Views\Doc\CreateDoc.cshtml.g.cs
+E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\Razor\Views\Doc\ListDoc.cshtml.g.cs
+E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\bin\Debug\net5.0\System.Data.SqlClient.dll
+E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\Razor\Views\Doc\Update.cshtml.g.cs

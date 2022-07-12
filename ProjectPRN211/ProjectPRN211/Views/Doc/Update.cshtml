@@ -1,0 +1,73 @@
+﻿@using ProjectPRN211.Models
+@model Document
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document Details</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css/style.css">
+</head>
+<body>
+    <section class="py-5 my-5">
+        <div class="container">
+            <div class="bg-white shadow rounded-lg d-block d-sm-flex">
+                <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+                    <form action="/doc/doupdate" method="post" id="form">
+                        <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
+                            <h3 class="mb-4">Document Details</h3>
+                            <p id="a" style="margin: 0;color: red;">@ViewBag.error</p>
+                            <input type="hidden" value="@Model.DocId" name="param1" />
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Document Title</label>
+                                        <input type="text" class="form-control" name="param2" value="@Model.DocSubject">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Body</label>
+                                        <textarea class="form-control" rows="4" form="form" name="param3" value="@Model.DocText">@Model.DocText</textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Send to</label><br>
+                                        <select class="form-select" aria-label="Hospital" name="param4">
+                                            @foreach (Hospital hos in ViewBag.hospitalList)
+                                            {
+                                                <option value="@hos.HospitalId">@hos.HospitalName</option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Date</label>
+                                        <input type="date" class="form-control" name="param5" value="@Model.DocDate">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <input type="submit" value="Update">
+                            </div>
+                            <div>
+                                <a href="/">HOME</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

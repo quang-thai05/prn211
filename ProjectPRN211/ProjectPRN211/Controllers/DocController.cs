@@ -39,7 +39,20 @@ namespace ProjectPRN211.Controllers
 
         public IActionResult ListDoc()
         {
-            return View();
+            DocManager docManager = new DocManager();
+            List<Document> list = docManager.GetDocuments();
+            return View(list);
+        }
+
+        public IActionResult Update(int param1)
+        {
+            HospitalManager hosManager = new HospitalManager();
+            List<Hospital> hospitalList = hosManager.GetHospitals();
+            ViewBag.hospitalList = hospitalList;
+            ViewBag.id = param1;
+            DocManager docManager = new DocManager();
+            Document doc = docManager.GetDocumetById(param1);
+            return View(doc);
         }
     }
 }
