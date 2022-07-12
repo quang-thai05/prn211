@@ -54,5 +54,25 @@ namespace ProjectPRN211.Controllers
             Document doc = docManager.GetDocumetById(param1);
             return View(doc);
         }
+
+        public IActionResult DoUpdate(int param1, string param2, string param3, int param4, DateTime param5)
+        {
+            if (param2.Length == 0 || param3.Length == 0)
+            {
+                ViewBag.error = "You need to fill all information!";
+                return View("/Views/Doc/Update.cshtml");
+            }
+            else
+            {
+                Document doc = new Document();
+                doc.DocSubject = param2;
+                doc.DocText = param3;
+                doc.HospitalId = param4;
+                doc.DocDate = param5;
+                DocManager docManager = new DocManager();
+                docManager.UpdateDoc(doc, param1);
+                return RedirectToAction("ListDoc");
+            }
+        }
     }
 }

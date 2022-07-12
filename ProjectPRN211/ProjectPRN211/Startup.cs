@@ -39,11 +39,11 @@ namespace ProjectPRN211
                     );
                 endpoints.MapControllerRoute(
                     name: "p1",
-                    pattern: "{controller}/{action}/{param1}/{param2}"
+                    pattern: "{controller}/{action}/{param1}"
                     );
                 endpoints.MapControllerRoute(
                     name: "p2",
-                    pattern: "{controller}/{action}/{param1}/{param2}/{param3}/{param4}"
+                    pattern: "{controller}/{action}/{param1}/{param2}"
                     );
                 endpoints.MapControllerRoute(
                     name: "p3",
@@ -51,7 +51,11 @@ namespace ProjectPRN211
                     );
                 endpoints.MapControllerRoute(
                     name: "p4",
-                    pattern: "{controller}/{action}/{param1}"
+                    pattern: "{controller}/{action}/{param1}/{param2}/{param3}/{param4}"
+                    );
+                endpoints.MapControllerRoute(
+                    name: "p5",
+                    pattern: "{controller}/{action}/{param1}/{param2}/{param3}/{param4}/{param5}"
                     );
             });
         }
