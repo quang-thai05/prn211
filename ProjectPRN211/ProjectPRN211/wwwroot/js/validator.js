@@ -173,6 +173,17 @@ Validator.isCharacterSpecial = function (selector, message) {
         }
     };
 }
+
+Validator.isDigits = function (selector, message) {
+    return {
+        selector: selector,
+        test: function (value) {
+            var regex = /[0-9]/g;
+            return !regex.test(value) ? undefined : message || 'Characters is not digit thus not allowed in param!';
+        }
+    };
+}
+
 Validator.isPositiveNumbers = function (selector, message) {
     return {
         selector: selector,

@@ -1,0 +1,103 @@
+﻿@using ProjectPRN211.Models;
+@model User;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Account Settings</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css/style.css">
+    <style>
+        .form-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <section class="py-5 my-5">
+        <div class="container">
+            <div class="bg-white shadow rounded-lg d-block d-sm-flex">
+                <div class="profile-tab-nav border-right">
+                    <div class="p-4">
+                        <div class="img-circle text-center mb-3">
+                            <img src="~/images/img/user2.jpg" alt="Image" class="shadow">
+                        </div>
+                        <h4 class="text-center">@Model.UserName</h4>
+                    </div>
+                </div>
+                <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+                    <form action="/user/updateprofile" method="post" id="form">
+                        <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
+                            <h3 class="mb-4">Account Information</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>User Name</label>
+                                        <input type="text" class="form-control" value="@Model.UserName" name="param1" id="name">
+                                        <span class="form-message"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Address</label>
+                                        <input type="text" class="form-control" value="@Model.Address" name="param2" id="address">
+                                        <span class="form-message"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Phone</label>
+                                        <input type="text" class="form-control" value="@Model.Phone" name="param3" id="phone" min="">
+                                        <span class="form-message"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>BirthDay</label>
+                                        <input type="date" class="form-control" value="@Model.DateOfBirth" name="param4" id="date">
+                                        <span class="form-message"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <input class="u" type="submit" value="UPDATE">
+                            </div>
+                            <div>
+                                <a href="/">HOME</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="~/js/validator.js" type="text/javascript"></script>
+
+    <!--validate input-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Validator({
+                form: '#form',
+                formGroupSelector: '.form-group',
+                errorSelector: '.form-message',
+                rules: [
+                    Validator.isRequired('#name', 'Please input Name!'),
+                    Validator.isRequired('#address', 'Please input Address!'),
+                    Validator.isRequired('#phone', 'Please input Phone!'),
+                    Validator.isRequired('#date', 'Please Choose Date!'),
+                    Validator.isValueRange('#phone', 10, 11, 'Please input at least 10 digits and max 11 digits!'),
+                    Validator.isDigits('#phone', 'Please input Digits!')
+                ]
+            });
+        });
+    </script>
+</body>
+</html>

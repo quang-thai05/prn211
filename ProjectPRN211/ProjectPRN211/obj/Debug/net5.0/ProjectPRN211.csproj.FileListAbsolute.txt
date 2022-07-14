@@ -149,3 +149,4 @@ E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5
 E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\Razor\Views\Doctor\ChangeHos.cshtml.g.cs
 E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\Razor\Views\Doc\DoctorDocList.cshtml.g.cs
 E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\Razor\Views\Doc\DoctorDocDetail.cshtml.g.cs
+E:\Class_Folder\PRN211\Project\prn211\ProjectPRN211\ProjectPRN211\obj\Debug\net5.0\Razor\Views\User\Profile.cshtml.g.cs

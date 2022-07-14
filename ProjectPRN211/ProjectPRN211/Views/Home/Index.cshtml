@@ -81,7 +81,7 @@
                             @if (Context.Session.GetString("user") != null)
                             {
                                 <li><a data-scroll>Welcome @(JsonConvert.DeserializeObject<User>(Context.Session.GetString("user")).UserName)</a></li>
-                                <li><a data-scroll href="/profile/profile">Profile</a></li>
+                                <li><a data-scroll href="/user/profile">Profile</a></li>
                                 <li><a data-scroll href="/auth/dologout">Logout</a></li>
                             }
                             @if (Context.Session.GetString("user") is null)
