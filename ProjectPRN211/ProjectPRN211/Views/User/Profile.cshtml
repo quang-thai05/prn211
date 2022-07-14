@@ -32,32 +32,33 @@
                     <form action="/user/updateprofile" method="post" id="form">
                         <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
                             <h3 class="mb-4">Account Information</h3>
+                            <input type="hidden" name="param1" value="@Model.UserId"/>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>User Name</label>
-                                        <input type="text" class="form-control" value="@Model.UserName" name="param1" id="name">
+                                        <input type="text" class="form-control" value="@Model.UserName" name="param2" id="name">
                                         <span class="form-message"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Address</label>
-                                        <input type="text" class="form-control" value="@Model.Address" name="param2" id="address">
+                                        <input type="text" class="form-control" value="@Model.Address" name="param3" id="address">
                                         <span class="form-message"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Phone</label>
-                                        <input type="text" class="form-control" value="@Model.Phone" name="param3" id="phone" min="">
+                                        <input type="text" class="form-control" value="@Model.Phone" name="param4" id="phone" min="">
                                         <span class="form-message"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>BirthDay</label>
-                                        <input type="date" class="form-control" value="@Model.DateOfBirth" name="param4" id="date">
+                                        <input type="date" class="form-control" value="@Model.DateOfBirth.ToString("yyyy-MM-dd")" name="param5" id="date">
                                         <span class="form-message"></span>
                                     </div>
                                 </div>
@@ -93,8 +94,6 @@
                     Validator.isRequired('#address', 'Please input Address!'),
                     Validator.isRequired('#phone', 'Please input Phone!'),
                     Validator.isRequired('#date', 'Please Choose Date!'),
-                    Validator.isValueRange('#phone', 10, 11, 'Please input at least 10 digits and max 11 digits!'),
-                    Validator.isDigits('#phone', 'Please input Digits!')
                 ]
             });
         });

@@ -47,6 +47,16 @@ namespace ProjectPRN211.Logics
             context.SaveChanges();
         }
 
+        public void Update(User user, int id)
+        {
+            User u = context.Users.FirstOrDefault(x => x.UserId == id);
+            u.UserName = user.UserName;
+            u.Address = user.Address;
+            u.Phone = user.Phone;
+            u.DateOfBirth = user.DateOfBirth;
+            context.SaveChanges();
+        }
+
         public string GenerateOTP()
         {
             Random random = new Random();
