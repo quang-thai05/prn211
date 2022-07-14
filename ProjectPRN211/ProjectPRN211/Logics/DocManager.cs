@@ -3,6 +3,7 @@ using ProjectPRN211.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 
 namespace ProjectPRN211.Logics
@@ -48,6 +49,31 @@ namespace ProjectPRN211.Logics
         {
             string sql = "select * from Document doc inner join Hospital hos on doc.hospital_id = hos.hospital_id";
             DataTable dt = DAO.GetDataSql(sql);
+            List<Document> list = new List<Document>();
+            foreach (DataRow dr in dt.Rows)
+            {
+                Document doc = new Document();
+                doc.DocId = Convert.ToInt32(dr["doc_id"].ToString());
+                doc.DocSubject = dr["doc_subject"].ToString();
+                doc.DocText = dr["doc_text"].ToString();
+                doc.DocDate = Convert.ToDateTime(dr["doc_date"]);
+                Hospital hos = new Hospital();
+                hos.HospitalId = Convert.ToInt32(dr["hospital_id"]);
+                hos.HospitalName = dr["hospital_name"].ToString();
+                doc.Hospital = hos;
+                list.Add(doc);
+            }
+            return list;
+        }
+
+        public List<Document> GetDocumentsByHospital(int hosId)
+        {
+            string sql = @"select * from Document doc inner join Hospital hos 
+                            on doc.hospital_id = hos.hospital_id
+                            where hos.hospital_id = @id";
+            SqlParameter p1 = new SqlParameter("@id", SqlDbType.Int);
+            p1.Value = hosId;
+            DataTable dt = DAO.GetDataSql(sql, p1);
             List<Document> list = new List<Document>();
             foreach (DataRow dr in dt.Rows)
             {

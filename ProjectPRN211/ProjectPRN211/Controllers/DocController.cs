@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using ProjectPRN211.Logics;
 using ProjectPRN211.Models;
 using System;
@@ -80,6 +82,14 @@ namespace ProjectPRN211.Controllers
             DocManager docManager = new DocManager();
             docManager.DeleteDoc(param1);
             return RedirectToAction("ListDoc");
+        }
+
+        public IActionResult DoctorDocList()
+        {
+            User u = JsonConvert.DeserializeObject<User>(HttpContext.Session.GetString("user"));
+            DocManager docManager = new DocManager();
+            List<Document> documents = docManager.GetDocumentsByHospital(u.HospitalId);
+            return View(documents);
         }
     }
 }

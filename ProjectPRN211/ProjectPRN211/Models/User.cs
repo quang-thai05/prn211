@@ -15,8 +15,8 @@ namespace ProjectPRN211.Models
         public string Address { get; set; }
         public string Phone { get; set; }
         public string Image { get; set; }
-        public int? HospitalId { get; set; }
-        public int? RoleId { get; set; }
+        public int HospitalId { get; set; }
+        public int RoleId { get; set; }
         public bool Active { get; set; }
         public string Otp { get; set; }
 
