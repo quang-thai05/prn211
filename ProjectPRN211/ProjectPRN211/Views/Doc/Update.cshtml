@@ -25,19 +25,19 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Document Title<span style="color: red">(*)</span></label>
-                                        <input type="text" class="form-control" name="param2" value="@Model.DocSubject">
+                                        <input type="text" class="form-control" name="param2" value="@Model.DocSubject" id="title">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Body<span style="color: red">(*)</span></label>
-                                        <textarea class="form-control" rows="4" form="form" name="param3" value="@Model.DocText">@Model.DocText</textarea>
+                                        <textarea class="form-control" rows="4" id="body" form="form" name="param3" value="@Model.DocText">@Model.DocText</textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Send to<span style="color: red">(*)</span></label><br>
-                                        <select class="form-select" aria-label="Hospital" name="param4">
+                                        <select class="form-select" aria-label="Hospital" name="param4" id="hos">
                                             @foreach (Hospital hos in ViewBag.hospitalList)
                                             {
                                                 <option value="@hos.HospitalId">@hos.HospitalName</option>
@@ -48,7 +48,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Date<span style="color: red">(*)</span></label>
-                                        <input type="date" class="form-control" name="param5" value="@Model.DocDate.ToString("yyyy-MM-dd")">
+                                        <input type="date" class="form-control" name="param5" id="date" value="@Model.DocDate.ToString("yyyy-MM-dd")">
                                     </div>
                                 </div>
                             </div>
@@ -69,5 +69,23 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="~/js/validator.js" type="text/javascript"></script>
+
+    <!--validate input-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Validator({
+                form: '#form',
+                formGroupSelector: '.form-group',
+                errorSelector: '.form-message',
+                rules: [
+                    Validator.isRequired('#title', 'Please input Title!'),
+                    Validator.isRequired('#body', 'Please input Body!'),
+                    Validator.isRequired('#hos', 'Please Select Hospital!'),
+                    Validator.isRequired('#date', 'Please Choose Date!'),
+                ]
+            });
+        });
+    </script>
 </body>
 </html>

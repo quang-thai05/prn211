@@ -13,7 +13,30 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="~/css/style1.css">
+    <style>
+        .button {
+            --color: #6a5af9;
+            font-family: "Poppins", sans-serif;
+            color: white;
+            padding: 9px 30px;
+            width: 100px;
+            border-radius: 2px;
+            background-color: var(--color);
+            cursor: pointer;
+            font-weight: 500;
+            outline: none;
+            border: none;
+            font-size: 14px;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            transition: all 0.2s linear;
+        }
 
+            .button:hover {
+                transform: rotateY(-15deg);
+            }
+    </style>
 </head>
 <body>
     <section class="ftco-section">
@@ -44,8 +67,8 @@
                                         <td>@doc.Hospital.HospitalName</td>
                                         <td>@doc.DocDate</td>
                                         <td>
-                                            <a href="/doc/update/@doc.DocId" class="btn btn-primary">Update</a>&nbsp; &nbsp;
-                                            <a href="/doc/dodelete/@doc.DocId" class="btn btn-primary" onclick="return confirm('Are you sure?')">Delete</a>
+                                            <button class="button" onclick="update(@doc.DocId)">Detail</button>
+                                            <button class="button" onclick="confirm(@doc.DocId)">Delete</button>
                                         </td>
                                     </tr>
                                 }
@@ -61,6 +84,32 @@
     <script src="~/js/popper.js"></script>
     <script src="~/js/bootstrap.min.js"></script>
     <script src="~/js/main.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        function confirm(id) {
+            swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this file!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        swal("Done!", "Activate Successfully!", "success")
+                            .then((value) => {
+                                window.location.href = "/doc/dodelete/" + id;
+                            });
+                    } else {
+                        window.location.href = "/doc/listdoc/";
+                    }
+                });
+        }
+
+        function update(id) {
+            window.location.href = "/doc/update/" + id;
+        }
+    </script>
 </body>
 </html>
 

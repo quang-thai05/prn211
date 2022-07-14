@@ -74,5 +74,12 @@ namespace ProjectPRN211.Controllers
                 return RedirectToAction("ListDoc");
             }
         }
+
+        public IActionResult DoDelete(int param1)
+        {
+            DocManager docManager = new DocManager();
+            docManager.DeleteDoc(param1);
+            return RedirectToAction("ListDoc");
+        }
     }
 }
