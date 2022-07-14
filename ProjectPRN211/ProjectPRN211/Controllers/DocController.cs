@@ -91,5 +91,12 @@ namespace ProjectPRN211.Controllers
             List<Document> documents = docManager.GetDocumentsByHospital(u.HospitalId);
             return View(documents);
         }
+
+        public IActionResult DoctorDocDetail(int param1)
+        {
+            DocManager docManager = new DocManager();
+            Document doc = docManager.GetDocumetById(param1);
+            return View(doc);
+        }
     }
 }
