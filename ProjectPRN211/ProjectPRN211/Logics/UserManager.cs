@@ -72,5 +72,26 @@ namespace ProjectPRN211.Logics
             }
             return res.ToString();
         }
+
+        public void UpdateToDoctor(int id)
+        {
+            User u = context.Users.FirstOrDefault(x => x.UserId == id);
+            u.RoleId = 2;
+            context.SaveChanges();
+        }
+
+        public void UpdateToPatient(int id)
+        {
+            User u = context.Users.FirstOrDefault(x => x.UserId == id);
+            u.RoleId = 3;
+            context.SaveChanges();
+        }
+
+        public void ChangeHos(int user, int hospital)
+        {
+            User u = context.Users.FirstOrDefault(x => x.UserId == user);
+            u.HospitalId = hospital;
+            context.SaveChanges();
+        }
     }
 }

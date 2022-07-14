@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using ProjectPRN211.Logics;
 using ProjectPRN211.Models;
+using System;
 
 namespace ProjectPRN211.Controllers
 {
@@ -118,6 +119,7 @@ namespace ProjectPRN211.Controllers
                     u2.UserName = param1;
                     u2.Email = param2;
                     u2.Password = param3;
+                    u2.DateOfBirth = DateTime.Now;
                     u2.Active = false;
                     u2.Otp = userManager.GenerateOTP();
                     u2.RoleId = 3;

@@ -46,7 +46,7 @@
                                         <td>@doctor.Phone</td>
                                         <td>
                                             <a href="/doctor/uptopatient/@doctor.UserId" class="btn btn-primary">To patient</a>&nbsp;
-                                            <a href="/user/profile/@doctor.UserId" class="btn btn-primary">Change hospital</a>
+                                            <a href="/doctor/changehos/@doctor.UserId" class="btn btn-primary">Change hospital</a>
                                         </td>
                                     </tr>
                                 }
@@ -79,7 +79,7 @@
                                         <td>@patient.Address</td>
                                         <td>@patient.Phone</td>
                                         <td>
-                                            <a href="/doctor/uptodoc/@patient.UserId" class="btn btn-primary">To Doctor</a>
+                                            <a href="/doctor/uptodoctor/@patient.UserId" class="btn btn-primary">To Doctor</a>
                                         </td>
                                     </tr>
                                 }
