@@ -1,0 +1,101 @@
+﻿@using ProjectPRN211.Models;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Doctor Management</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="~/css/style1.css">
+
+</head>
+<body>
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section"><a href="/">Home</a></h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="text-center mb-4">Doctor List</h4>
+                    <div class="table-wrap">
+                        <table class="table">
+                            <thead class="thead-primary">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Date of birth</th>
+                                    <th>Address</th>
+                                    <th>Phone</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (User doctor in ViewBag.doctors)
+                                {
+                                    <tr>
+                                        <th scope="row" class="scope">@doctor.UserName</th>
+                                        <td>@doctor.DateOfBirth</td>
+                                        <td>@doctor.Address</td>
+                                        <td>@doctor.Phone</td>
+                                        <td>
+                                            <a href="/doctor/uptopatient/@doctor.UserId" class="btn btn-primary">To patient</a>&nbsp;
+                                            <a href="/user/profile/@doctor.UserId" class="btn btn-primary">Change hospital</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="text-center mb-4">Patient List</h4>
+                    <div class="table-wrap">
+                        <table class="table">
+                            <thead class="thead-primary">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Date of birth</th>
+                                    <th>Address</th>
+                                    <th>Phone</th>
+                                    <th>Update to doctor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (User patient in ViewBag.patients)
+                                {
+                                    <tr>
+                                        <th scope="row" class="scope">@patient.UserName</th>
+                                        <td>@patient.DateOfBirth</td>
+                                        <td>@patient.Address</td>
+                                        <td>@patient.Phone</td>
+                                        <td>
+                                            <a href="/doctor/uptodoc/@patient.UserId" class="btn btn-primary">To Doctor</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/popper.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/main.js"></script>
+
+</body>
+</html>
+

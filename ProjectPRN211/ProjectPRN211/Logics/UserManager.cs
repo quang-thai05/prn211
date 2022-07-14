@@ -1,5 +1,6 @@
 ﻿using ProjectPRN211.Models;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -26,6 +27,11 @@ namespace ProjectPRN211.Logics
         public User GetUserByEmail(string email)
         {
             return context.Users.FirstOrDefault(x => x.Email.Equals(email));
+        }
+
+        public List<User> GetUsersByRole(int role)
+        {
+            return context.Users.Where(x => x.RoleId == role).ToList();
         }
 
         public void ActiveAccount(int id)
